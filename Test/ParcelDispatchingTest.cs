@@ -279,13 +279,13 @@ namespace Test
 
 			Assert.AreEqual(result.Result.ToList()[0].DepartmentName, nameof(Mail));
 			Assert.IsTrue(result.Result.ToList()[0].IsSignOff.GetValueOrDefault());
-			Assert.AreEqual(result.Result.ToList()[0].Sender, "test1");
+			Assert.AreEqual(result.Result.ToList()[0].Sender.Name, "test1");
 			Assert.AreEqual(result.Result.ToList()[0].Receipient.Name, "receipient1");
 
 			Assert.AreEqual(result.Result.ToList()[1].DepartmentName, nameof(Heavy));
 			Assert.IsTrue(result.Result.ToList()[1].IsSignOff.GetValueOrDefault());
-			Assert.AreEqual(result.Result.ToList()[1].Sender, "test2");
-			Assert.AreEqual(result.Result.ToList()[0].Receipient.Name, "receipient2");
+			Assert.AreEqual(result.Result.ToList()[1].Sender.Name, "test2");
+			Assert.AreEqual(result.Result.ToList()[1].Receipient.Name, "receipient2");
 
 
 			Assert.AreEqual(result.Error, ErrorType.None);
