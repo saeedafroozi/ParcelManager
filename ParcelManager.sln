@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcelManager", "ParcelManager.csproj", "{998044C5-A2D3-4561-90B8-F00939EF44F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{2C65A262-EE71-48C8-BCF9-F2D81471F138}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{998044C5-A2D3-4561-90B8-F00939EF44F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998044C5-A2D3-4561-90B8-F00939EF44F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998044C5-A2D3-4561-90B8-F00939EF44F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998044C5-A2D3-4561-90B8-F00939EF44F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C65A262-EE71-48C8-BCF9-F2D81471F138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C65A262-EE71-48C8-BCF9-F2D81471F138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C65A262-EE71-48C8-BCF9-F2D81471F138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C65A262-EE71-48C8-BCF9-F2D81471F138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBA062CE-9BA9-49FE-BB37-A86F7D321DA1}
+	EndGlobalSection
+EndGlobal
