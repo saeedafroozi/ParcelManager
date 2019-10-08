@@ -52,7 +52,8 @@ namespace Test
 			var result = appStart.Start(container.Parcels);
 
 			Assert.AreEqual(result.Result.SingleOrDefault().DepartmentName, nameof(Mail));
-			Assert.AreEqual(result.Result.SingleOrDefault().Sender, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Sender.Name, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Receipient.Name, "receipient");
 			Assert.AreEqual(result.Error, ErrorType.None);
 			Assert.IsTrue(string.IsNullOrEmpty(result.Message));
 			Assert.IsTrue(result.Success);
@@ -100,7 +101,8 @@ namespace Test
 			var result = appStart.Start(container.Parcels);
 
 			Assert.AreEqual(result.Result.SingleOrDefault().DepartmentName, nameof(Regular));
-			Assert.AreEqual(result.Result.SingleOrDefault().Sender, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Sender.Name, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Receipient.Name, "receipient");
 			Assert.AreEqual(result.Error, ErrorType.None);
 			Assert.IsTrue(string.IsNullOrEmpty(result.Message));
 			Assert.IsTrue(result.Success);
@@ -149,7 +151,8 @@ namespace Test
 			var result = appStart.Start(container.Parcels);
 
 			Assert.AreEqual(result.Result.SingleOrDefault().DepartmentName, nameof(Heavy));
-			Assert.AreEqual(result.Result.SingleOrDefault().Sender, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Sender.Name, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Receipient.Name, "receipient");
 			Assert.AreEqual(result.Error, ErrorType.None);
 			Assert.IsTrue(string.IsNullOrEmpty(result.Message));
 			Assert.IsTrue(result.Success);
@@ -199,7 +202,8 @@ namespace Test
 
 			Assert.AreEqual(result.Result.SingleOrDefault().DepartmentName, nameof(Heavy));
 			Assert.IsTrue(result.Result.SingleOrDefault().IsSignOff.GetValueOrDefault());
-			Assert.AreEqual(result.Result.SingleOrDefault().Sender, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Sender.Name, "test");
+			Assert.AreEqual(result.Result.SingleOrDefault().Receipient.Name, "receipient");
 			Assert.AreEqual(result.Error, ErrorType.None);
 			Assert.IsTrue(string.IsNullOrEmpty(result.Message));
 			Assert.IsTrue(result.Success);
@@ -224,7 +228,7 @@ namespace Test
 								 PostalCode="j321321",
 									Street="street"
 						},
-							Name="receipient"
+							Name="receipient1"
 					},
 					Sender = new Sender{
 					 Name="test1",
@@ -247,7 +251,7 @@ namespace Test
 								 PostalCode="j321321",
 									Street="street"
 						},
-							Name="receipient"
+							Name="receipient2"
 					},
 					Sender = new Sender{
 					 Name="test2",
@@ -276,10 +280,12 @@ namespace Test
 			Assert.AreEqual(result.Result.ToList()[0].DepartmentName, nameof(Mail));
 			Assert.IsTrue(result.Result.ToList()[0].IsSignOff.GetValueOrDefault());
 			Assert.AreEqual(result.Result.ToList()[0].Sender, "test1");
+			Assert.AreEqual(result.Result.ToList()[0].Receipient.Name, "receipient1");
 
 			Assert.AreEqual(result.Result.ToList()[1].DepartmentName, nameof(Heavy));
 			Assert.IsTrue(result.Result.ToList()[1].IsSignOff.GetValueOrDefault());
 			Assert.AreEqual(result.Result.ToList()[1].Sender, "test2");
+			Assert.AreEqual(result.Result.ToList()[0].Receipient.Name, "receipient2");
 
 
 			Assert.AreEqual(result.Error, ErrorType.None);
